@@ -27,4 +27,4 @@ const romanToInt = (roman) => {
   return result;
 };
 
-console.log(romanToInt("XXI")); // Output: 21
+console.log(romanToInt("XXI"));

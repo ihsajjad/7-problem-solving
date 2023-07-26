@@ -5,7 +5,7 @@
 const numbers = [1, 3, 6, 8, 11, 15]; // Array of numbers
 
 // This function returns the indices of the two numbers that add up to the targeted value
-const getTwoIndicesNum = (numbers, targetedNumber) => {
+/* const getTwoIndicesNum = (numbers, targetedNumber) => {
   let indicesNumbers = []; // to hold the indices
 
   // this function will add two numbers and compare the result to the targeted value
@@ -46,8 +46,16 @@ const getTwoIndicesNum = (numbers, targetedNumber) => {
   }
 
   return indicesNumbers;
-};
+}; */
 
+const getTwoIndicesNum = (numbers, targetedNumber) => {
+  for (const number of numbers) {
+    if (number < targetedNumber) {
+      const newNumber = targetedNumber - number;
+      console.log(numbers.indexOf(number));
+    }
+  }
+};
 // calling the getTwoIndicesNum function
 const result = getTwoIndicesNum(numbers, 4);
 console.log(result);
