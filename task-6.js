@@ -5,6 +5,7 @@ const generatePassord = () => {
     "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
   const chars = charsString.split("");
+  console.log(chars);
 
   const passwordLength = 12;
 
@@ -12,6 +13,7 @@ const generatePassord = () => {
 
   for (let i = 0; i < passwordLength; i++) {
     const randomIndex = Math.ceil(Math.random() * charsString.length - 1);
+    console.log(randomIndex);
     const randomChar = chars[randomIndex];
     passwordArr.push(randomChar);
   }
