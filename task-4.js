@@ -4,58 +4,25 @@
 
 const numbers = [1, 3, 6, 8, 11, 15]; // Array of numbers
 
-// This function returns the indices of the two numbers that add up to the targeted value
-/* const getTwoIndicesNum = (numbers, targetedNumber) => {
-  let indicesNumbers = []; // to hold the indices
-
-  // this function will add two numbers and compare the result to the targeted value
-  const sum = (a, b, value) => {
-    if (a + b === value) {
-      return [a, b];
-    }
-  };
-
-  let secondaryIndex = 0; // for input the second number based on index;
-
-  for (let i = 0; i < numbers.length; i++) {
-    for (let i = 0; i < numbers.length; i++) {
-      const result = sum(numbers[i], numbers[secondaryIndex], targetedNumber); // calling the sum function with three arguments;
-
-      // checking the indexs of the numbers that returned by the sum function
-      if (result?.length === 2) {
-        const a = numbers.indexOf(result[0]);
-        const b = numbers.indexOf(result[1]);
-        indicesNumbers = [b, a]; // Setting the indexes to the indecesNumbers variable that is declared on the top
+const getTwoIndicesNum = (numbers, targetedNumber) => {
+  let indicesNumbers;
+  for (const number of numbers) {
+    if (number < targetedNumber) {
+      const a = numbers.indexOf(targetedNumber - number);
+      const b = numbers.indexOf(number);
+      indicesNumbers = [b, a];
+      if (indicesNumbers?.length === 2) {
         break;
       }
-
-      // Increasing the secondaryIndex value if expected data did not find from previous loops
-      if (i === numbers.length - 1) {
-        secondaryIndex += 1;
-      }
-    }
-
-    // breaking the loop after getting the indicesNumbers
-    if (indicesNumbers.length === 2) {
-      break;
     }
   }
 
-  if (indicesNumbers.length < 2) {
+  if (indicesNumbers[1] < 0) {
     indicesNumbers = "Unavailable Input";
   }
 
   return indicesNumbers;
-}; */
-
-const getTwoIndicesNum = (numbers, targetedNumber) => {
-  for (const number of numbers) {
-    if (number < targetedNumber) {
-      const newNumber = targetedNumber - number;
-      console.log(numbers.indexOf(number));
-    }
-  }
 };
 // calling the getTwoIndicesNum function
-const result = getTwoIndicesNum(numbers, 4);
+const result = getTwoIndicesNum(numbers, 7);
 console.log(result);
